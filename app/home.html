@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row mt-3 mx-1">
+
+        <div ng-repeat="note in notes">
+            <div class="align-self-start card m-1" style="width: 250px;">
+                <div class="card-body" ng-style="{background: note.color}">
+                    <div class="card-title">
+                        <h5 ng-bind="note.title"></h5>
+                    </div>
+                    <div class="card-text" ng-bind="note.text"></div>
+                    <div ng-repeat="item in note.items">
+                        <input type="checkbox" class="mt-1">
+                        <span ng-bind="item"></span>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <nav class="navbar fixed-bottom navbar-expand navbar-dark bg-dark">
+        <div class="navbar-nav">
+            <a class="btn btn-secondary m-1" href="#/NewNote">
+                <span class="oi oi-copywriting mx-1"></span>
+                <span>New note</span>
+            </a>
+            <a class="btn btn-secondary m-1" href="#/NewList">
+                <span class="oi oi-task mx-1"></span>
+                <span>New To-Do List</span>
+            </a>
+        </div>
+    </nav>
+</div>

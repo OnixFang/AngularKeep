@@ -1,0 +1,71 @@
+<div class="container-fluid text-center">
+    <div class="row justify-content-center mt-5">
+        <div class="col-12 col-sm-8 col-md-4">
+            <div class="jumbotron bg-light">
+                <h3>New To-Do List</h3>
+                <form ng-submit="addItem()">
+                    <div class="row text-left">
+                        <div class="col-6 text-left">
+                            <input type="text" class="form-control mb-2" placeholder="Title..." ng-model="list.title" required>
+                        </div>
+                    </div>
+                    <div class="row text-left mb-2" ng-repeat="item in list.items">
+                        <div class="col">
+                            <span>
+                                <button class="btn unstyled-button mx-2 mb-1" type="button" ng-click="deleteItem($index)">
+                                    <span class="oi oi-x"></span>
+                                </button>
+                                <input type="checkbox">
+                                <span ng-bind="item"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row text-left">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Item text..." ng-model="newItem" required>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-outline-secondary" type="submit">
+                                <span class="oi oi-plus"></span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input class="btn btn-lg btn-primary mt-2" type="button" value="Save" data-toggle="modal" data-target="#saveModal" ng-disabled="!list.title">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">AngularKeep</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <span>Note successfully saved!! (not really...)</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar fixed-bottom navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="btn btn-secondary m-1" href="#/Home">
+            <span class="oi oi-arrow-thick-left mx-1"></span>
+            <span>Go Back</span>
+        </a>
+    </div>
+</nav>

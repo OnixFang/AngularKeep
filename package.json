@@ -1,0 +1,19 @@
+{
+  "name": "angularkeep",
+  "version": "1.0.0",
+  "description": "Application for saving post notes and to-do lists.",
+  "main": "scripts/web-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ulises Taveras",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
+  }
+}
